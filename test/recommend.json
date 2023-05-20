@@ -9,6 +9,16 @@
             "banner": "https://qrodex.github.io/QroChess-Classic/rc_images/qrojune.png",
             "link": "https://qrodex.github.io/QroChess-Classic/",
             "type": "html5"
+        },
+        {
+            "name": "QroHQ",
+            "Version": 1,
+            "developer": "Qrodex",
+            "feed": "false",
+            "info": "Explore The Qrodex HQ.",
+            "banner": "https://qrodex.github.io/QroChess-Classic/rc_images/qrojune.png",
+            "link": "../QroHQ/index.html",
+            "type": "html5"
         }
     ]
 }
