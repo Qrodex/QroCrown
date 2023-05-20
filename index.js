@@ -8,7 +8,7 @@ app.on('ready', () => {
     const window = new BrowserWindow({
         width: 1036,
         height: 609,
-        title: 'Graycrown',
+        title: 'QroCrown',
         frame: false,
         icon: APP_ICON,
         webPreferences: {
@@ -43,7 +43,7 @@ app.on('ready', () => {
     }
 });
 // define launch protocol
-app.setAsDefaultProtocolClient('graycrown')
+app.setAsDefaultProtocolClient('qrocrown')
 // return OAUTH URL
 app.on('open-url', (e, url) => {
     const paramss = new URLSearchParams(window.location.href) 

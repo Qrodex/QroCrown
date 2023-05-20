@@ -1,7 +1,7 @@
 {
     "code": "en",
     "translations": {
-        "welcomeBack": "Welcome back!",
+        "welcomeBack": "Welcome back, ",
         "library": "Library",
         "store": "Store",
         "settings": "Settings",
@@ -14,9 +14,9 @@
         "downloadAndInstall": "Download and Install",
         "refreshStore": "Refresh Store",
         "wineConfig": "Wine Configuration",
-        "toLibrary": "Go to library!",
+        "toLibrary": "Go to library",
         "refInternet": "Refresh internet connection",
-        "recForU": "Recommended for you",
+        "recForU": "Instant Games",
         "internetDisconnected": "Internet disconnected 😥", 
         "discL1": "Don't fret, buddy! You still have a chance! All you need to do is to",
         "discL2": "reconnect your internet, then click the button to refresh! 😉",

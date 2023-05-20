@@ -1,12 +1,14 @@
 {
-    "recommend": [
+    "items": [
         {
-            "id": "mf",
-            "name": "Memeforest",
-            "desc": "Enjoy a world full of memes! You are stranded in an island full of memes, your mission is to fight the bad meme boss (the grubhub guy).",
-            "img": "https://bobuxstation.github.io/Coal-Web/banners/Memeforest.png",
-            "alt": "Memeforest",
-            "game": "turbowarp.org/502766195/embed"
+            "name": "QroChess Classic",
+            "Version": 1,
+            "developer": "Qrodex",
+            "feed": "false",
+            "info": "Best chess game. Ever.",
+            "banner": "https://qrodex.github.io/QroChess-Classic/rc_images/qrojune.png",
+            "link": "https://qrodex.github.io/QroChess-Classic/",
+            "type": "html5"
         }
     ]
 }

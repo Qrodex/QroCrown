@@ -1,8 +1,8 @@
 {
-  "name": "graycrown",
-  "version": "1.2.1",
+  "name": "qrocrown",
+  "version": "1.2.2",
   "description": "a simple game launcher",
-  "homepage": "https://gray-crown.web.app",
+  "homepage": "http://qrodex.2kool4u.net",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
@@ -18,12 +18,12 @@
     "launcher",
     "games"
   ],
-  "author": "zeankun.dev <zeanfender11@gmail.com>",
+  "author": "qrodex",
   "license": "GPL-3.0",
   "build": {
-    "appId": "com.zeankundev.graycrown",
-    "productName": "Graycrown",
-    "copyright": "Copyright © 2022 zeankun.dev",
+    "appId": "com.qrodex.qrocrown",
+    "productName": "QroCrown",
+    "copyright": "Copyright © 2023 qrodex",
     "icon": "build/icons/512x512.png",
     "directories": {
       "output": "dist"
@@ -33,7 +33,7 @@
         "nsis",
         "portable"
       ],
-      "publisherName": "zeankun.dev"
+      "publisherName": "qrodex"
     },
     "linux": {
       "target": [
@@ -42,7 +42,7 @@
         "snap",
         "rpm"
       ],
-      "maintainer": "zeankun.dev",
+      "maintainer": "qrodex",
       "category": "Game",
       "icon": "./build/icons/512x512.png"
     },
