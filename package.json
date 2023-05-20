@@ -10,6 +10,11 @@
     "build": "electron-builder",
     "win": "electron-builder --win"
   },
+  "repository": "https://github.com/qrodex/QroCrown",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
   "browser": {
     "child_process": true
   },
