@@ -353,6 +353,7 @@ function getGames() {
             gameList.innerHTML = "";
             if (data.games.length === 0) {
                 gameList.innerHTML = "You do not have any games. Get some games!"
+                document.getElementById("home-list").innerHTML = "You do not have any games. Get some games!"
             }
             else {
                 data.games.forEach(game => {
@@ -397,13 +398,13 @@ function getGames() {
                                     else notifDisplay(err, 'Failed to launch!')
                                     clearInterval(timer)
                                     gameButton.className = "play";
-                                    gameButton.innerHTML = play;
+                                    gameButton.innerHTML = 'Play';
                                     console.log(err.message)
                                 });
                                 proc.on('exit', () => {
                                     clearInterval(timer)
                                     gameButton.className = "play";
-                                    gameButton.innerHTML = play;
+                                    gameButton.innerHTML = 'Play';
                                 })
                             } else {
                                 if (platform == 'win32') notifDisplay('Wine is only available for Mac or Linux', 'Your OS is unsupported');
@@ -423,12 +424,12 @@ function getGames() {
                                             clearInterval(timer)
                                             notifDisplay(err, 'Failed to launch!')
                                             gameButton.className = "play";
-                                            gameButton.innerHTML = play;
+                                            gameButton.innerHTML = 'Play';
                                         });
                                         proc.on('exit', () => {
                                             clearInterval(timer)
                                             gameButton.className = "play";
-                                            gameButton.innerHTML = play;
+                                            gameButton.innerHTML = 'Play';
                                         })
                                     } else {
                                         notifDisplay('Wine cannot be searched. Close QroCrown, install wine, then try again.', 'Unsupported!')
@@ -469,7 +470,7 @@ function getGames() {
                     let seconds = 0
                     let gameButton = document.createElement("button");
                     gameButton.className = "play";
-                    gameButton.innerHTML = `<span>${play}</span>`;
+                    gameButton.innerHTML = `<span>Play</span>`;
                     gameButton.onclick = function () {
                         buttonClick.play();
                         if (gameButton.className == "play") {
@@ -493,13 +494,13 @@ function getGames() {
                                     else notifDisplay(err, 'Failed to launch!')
                                     clearInterval(timer)
                                     gameButton.className = "play";
-                                    gameButton.innerHTML = play;
+                                    gameButton.innerHTML = 'Play';
                                     console.log(err.message)
                                 });
                                 proc.on('exit', () => {
                                     clearInterval(timer)
                                     gameButton.className = "play";
-                                    gameButton.innerHTML = play;
+                                    gameButton.innerHTML = 'Play';
                                 })
                             } else {
                                 if (platform == 'win32') notifDisplay('Wine is only available for Mac or Linux', 'Your OS is unsupported');
@@ -519,12 +520,12 @@ function getGames() {
                                             clearInterval(timer)
                                             notifDisplay(err, 'Failed to launch!')
                                             gameButton.className = "play";
-                                            gameButton.innerHTML = play;
+                                            gameButton.innerHTML = 'Play';
                                         });
                                         proc.on('exit', () => {
                                             clearInterval(timer)
                                             gameButton.className = "play";
-                                            gameButton.innerHTML = play;
+                                            gameButton.innerHTML = 'Play';
                                         })
                                     } else {
                                         notifDisplay('Wine cannot be searched. Close QroCrown, install wine, then try again.', 'Unsupported!')
@@ -620,7 +621,7 @@ function recommendGames() {
                     `;
                         let startBtn = document.createElement("button");
                         startBtn.className = "download";
-                        startBtn.innerHTML = play;
+                        startBtn.innerHTML = 'Play';
                         startBtn.onclick = function () {
                             buttonClick.play();
                             if (items.link !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.link)
@@ -640,7 +641,7 @@ function recommendGames() {
                     `;
                         let startBtn = document.createElement("button");
                         startBtn.className = "download";
-                        startBtn.innerHTML = play;
+                        startBtn.innerHTML = 'Play';
                         startBtn.onclick = function () {
                             buttonClick.play();
                             if (items.link !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.link)
@@ -675,7 +676,7 @@ function qrodexGames() {
                     `;
                         let startBtn = document.createElement("button");
                         startBtn.className = "download";
-                        startBtn.innerHTML = play;
+                        startBtn.innerHTML = 'Play';
                         startBtn.onclick = function () {
                             buttonClick.play();
                             if (items.link !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.link)

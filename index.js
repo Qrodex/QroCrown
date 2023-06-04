@@ -10,6 +10,7 @@ app.on('ready', () => {
         height: 609,
         title: 'QroCrown',
         frame: false,
+        transparent: true,
         icon: APP_ICON,
         webPreferences: {
             nodeIntegration: true,
