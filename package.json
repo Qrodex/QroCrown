@@ -1,7 +1,7 @@
 {
   "name": "qrocrown",
   "version": "1.2.4",
-  "description": "a simple game launcher",
+  "description": "An enhanced Qrodex game launcher",
   "homepage": "http://qrodex.2kool4u.net",
   "type": "commonjs",
   "main": "index.js",
