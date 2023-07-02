@@ -117,7 +117,7 @@ fetch(app.getPath('userData') + '/config.json')
         fetch(`../language/${data.config.language}.json`)
             .then((res) => res.json())
             .then(data => {
-                document.getElementById('welcome-back').innerHTML = data.translations.welcomeBack + os.hostname() + "!";
+                document.getElementById('welcome-back').innerHTML = data.translations.welcomeBack + require("os").userInfo().username + "!";
                 document.getElementById('home-txt').innerHTML = data.translations.home
                 document.getElementById('library-txt').innerHTML = data.translations.library
                 document.getElementById('store-txt').innerHTML = data.translations.store
@@ -624,7 +624,7 @@ function recommendGames() {
                         startBtn.innerHTML = 'Play';
                         startBtn.onclick = function () {
                             buttonClick.play();
-                            if (items.link !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.link)
+                            if (items.preview !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.preview)
                             else notifDisplay('Error 407: Missing link argument in JSON file', 'Failed to launch!')
                         }
                         recommendDisplay.appendChild(startBtn)
@@ -644,7 +644,7 @@ function recommendGames() {
                         startBtn.innerHTML = 'Play';
                         startBtn.onclick = function () {
                             buttonClick.play();
-                            if (items.link !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.link)
+                            if (items.preview !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.preview)
                             else notifDisplay('Error 407: Missing link argument in JSON file', 'Failed to launch!')
                         }
                         recommendDisplay.appendChild(startBtn)
