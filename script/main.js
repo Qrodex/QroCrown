@@ -354,6 +354,9 @@ function getGames() {
             if (data.games.length === 0) {
                 gameList.innerHTML = "You do not have any games. Get some games!"
                 document.getElementById("home-list").innerHTML = "You do not have any games. Get some games!"
+                document.getElementById("home-list").style.paddingTop = 'calc(180px/2)'
+                document.getElementById("home-list").style.paddingBottom = 'calc(180px/2)'
+                document.getElementById("home-list").style.paddingLeft = '10px'
             }
             else {
                 data.games.forEach(game => {
@@ -606,30 +609,9 @@ function recommendGames() {
             fetch(data.config.custom)
                 .then(res => res.json())
                 .then(data => {
-                    let rec = document.getElementById('recommend-list');
                     let rec2 = document.getElementById('recommend-2');
-                    rec.innerHTML = '';
                     rec2.innerHTML = '';
-                    data.items.forEach(items => {
-                        let recommendDisplay = document.createElement('div');
-                        recommendDisplay.className = 'recommend-display';
-                        recommendDisplay.setAttribute('style', `background: url('${items.banner}') no-repeat; background-size: cover;`)
-                        recommendDisplay.title = items.info;
-                        recommendDisplay.innerHTML = `
-                        <img style="width: 48px !important; height:48px !important; border-radius:15px;" src="${items.banner}">
-                        <div class="store-title">${items.name.slice(0, 16) + (items.name.length > 16 ? '...' : '')}</div>
-                    `;
-                        let startBtn = document.createElement("button");
-                        startBtn.className = "download";
-                        startBtn.innerHTML = 'Play';
-                        startBtn.onclick = function () {
-                            buttonClick.play();
-                            if (items.preview !== '') spw(items.name, items.banner, items.info, items.developer, items.feed, items.preview)
-                            else notifDisplay('Error 407: Missing link argument in JSON file', 'Failed to launch!')
-                        }
-                        recommendDisplay.appendChild(startBtn)
-                        rec.appendChild(recommendDisplay)
-                    })
+
                     data.items.forEach(items => {
                         let recommendDisplay = document.createElement('div');
                         recommendDisplay.className = 'recommend-display';
@@ -650,6 +632,41 @@ function recommendGames() {
                         recommendDisplay.appendChild(startBtn)
                         rec2.appendChild(recommendDisplay)
                     })
+
+                    async function fetchExternalGames() {
+                        let fetchJSON = await fetch('https://emupedia.net/beta/emuos/assets/data/desktop.json');
+                        let data = await fetchJSON.json();
+
+                        data.icons.forEach(items => {
+                            if (items.title == "External Website") return 0;
+
+                            let recommendDisplay = document.createElement('div');
+                            recommendDisplay.className = 'recommend-display';
+                            recommendDisplay.setAttribute('style', `background: url('https://emupedia.net/beta/emuos/${items.icon}.ico') no-repeat; background-size: cover;`)
+                            recommendDisplay.title = items.info;
+                            recommendDisplay.innerHTML = `
+                            <img style="width: 48px !important; height:48px !important; border-radius:15px;" src="https://emupedia.net/beta/emuos/${items.icon}.ico">
+                            <div class="store-title">${items.name.slice(0, 16) + (items.name.length > 16 ? '...' : '')}</div>
+                        `;
+                            let startBtn = document.createElement("button");
+                            startBtn.className = "download";
+                            startBtn.innerHTML = 'Play';
+                            startBtn.onclick = function () {
+                                buttonClick.play();
+                                if (items.link.includes('https')) {
+                                    extgameURL = `${items.link}`
+                                } else {
+                                    extgameURL = `https://emupedia.net${items.link}`
+                                }
+                                if (items.preview !== '') spw(items.name, `https://emupedia.net/beta/emuos/${items.icon}.ico`, 'Game from third party provider. (emupedia.net)', 'emupedia.net', 'false', extgameURL)
+                                else notifDisplay('Error 407: Missing link argument in JSON file', 'Failed to launch!')
+                            }
+                            recommendDisplay.appendChild(startBtn)
+                            rec2.appendChild(recommendDisplay)
+                        })
+                    }
+
+                    fetchExternalGames()
                 }).catch(function (e) {
                     console.log(e);
                     document.getElementById('e').style.display = 'block';

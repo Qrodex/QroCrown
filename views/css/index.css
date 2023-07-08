@@ -201,7 +201,6 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1d1d1d;
   border: 0px none #ffffff;
   border-radius: 50px;
 }
@@ -224,6 +223,7 @@ body {
   font-family: 'Segoe UI Variable Display', system-ui, 'Noto Sans Arabic';
   -webkit-font-smoothing: antialiased;
   user-select: none;
+  background: var(--main-color);
 }
 
 reg-head {
@@ -378,7 +378,7 @@ img {
 }
 
 .tab {
-  padding: 12px;
+  padding: 10px;
   -webkit-appearance: none;
   border: none;
   outline: var(--main-text);
@@ -388,7 +388,8 @@ img {
   color: var(--main-text);
   background: none;
   min-height: 47px;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
 .tab strong {
@@ -399,6 +400,7 @@ img {
 .active {
   background-color: var(--main-hover-color);
   transition: all 0.3s ease-in-out;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .container {
@@ -418,10 +420,14 @@ img {
   outline: none;
   border: none;
   background: none;
-  /* border-radius: 10px; */
+  border-radius: 10px !important;
   /* margin: 5px; */
-  /* height: 30px; */
-  /* width: 30px; */
+  height: 47px !important;
+  width: 47px !important;
+  margin: 5px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  box-sizing: border-box !important;
 }
 
 .navbars-mac {
@@ -448,11 +454,13 @@ img {
   position: relative;
   /* align-self: center; */
   transform: translateY(30px);
-  left: calc(350px - 120pt);
+  left: 25vw;
   animation: notif-popup 0.5s ease-out;
   padding: 15px;
   border-radius: 15px;
   display: none;
+  border: var(--main-selected-disabled-color) solid 1px;
+  width: 50vw;
 }
 
 @keyframes notif-popup {
@@ -480,6 +488,7 @@ h5 {
 
 .navbutton:hover {
   background: var(--main-hover-color) !important;
+  box-sizing: border-box;
 }
 
 .container {
@@ -489,6 +498,11 @@ h5 {
   left: 0;
   bottom: 0;
   z-index: -1;
+  margin: 5px;
+  border-radius: 10px !important;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 object,
@@ -506,6 +520,7 @@ iframe {
   padding: 12px;
   font-family: 'Segoe UI Variable Display', system-ui, 'Noto Sans Arabic';
   cursor: url('../../assets/pointer.png'), auto;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .button:hover {
@@ -523,6 +538,7 @@ iframe {
   background-size: cover;
   display: inline-block;
   border-radius: 25px;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .game-display p {
@@ -537,6 +553,8 @@ iframe {
   font-size: 15pt;
   outline: none;
   font-family: 'Segoe UI Variable Small', system-ui;
+  border: var(--main-selected-disabled-color) solid 1px;
+  border-radius: 2px;
 }
 
 .login {
@@ -651,6 +669,7 @@ a {
   padding: 10px;
   display: inline-block;
   border-radius: 25px;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .recommend-display {
@@ -662,6 +681,7 @@ a {
   animation: scale-down-center 0.2s ease-in-out;
   display: inline-block;
   border-radius: 25px;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .store-title {
@@ -690,12 +710,18 @@ a {
 }
 
 .game-info {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, .8);
+  background-size: contain;
   background-blend-mode: multiply;
   animation: slide-in-blurred-right 0.5s ease-in-out both;
   display: block;
   min-height: 100vh;
   overflow-y: scroll;
+  margin: 5px;
+  box-sizing: border-box;
+  margin-top: 0;
+  border-radius: 10px;
+  border: var(--main-selected-disabled-color) solid 1px;
 }
 
 .info {
@@ -727,11 +753,13 @@ a {
   animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   position: absolute;
   top: 3%;
-  left: 40%;
+  left: 25vw;
   padding: 10px;
   border-radius: 15px;
   z-index: 9;
+  border: var(--main-selected-disabled-color) solid 1px;
   align-items: center;
+  width: 50vw;
 }
 
 select,

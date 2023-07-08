@@ -109,11 +109,8 @@
                 <h1 id="store-text">Store (WIP)</h1>
                 <button class="button" onclick="fetchStores();" id="refresh-store" style="display: none;">Refresh
                     Store</button>
-                <div id="store-list"></div>
-                <h1 id="rec-for-u">Instant Games</h1>
-                <div id="recommend-list">
-                    <br>
-                    <div id="e" style="display: none; text-align: center;">
+                <div id="store-list">
+                    <center>
                         <img src="../assets/nointernet.svg" style="width: 150px !important;">
                         <br>
                         <br>
@@ -124,9 +121,9 @@
                         <span id="l2">your internet, then click the button to refresh! 😉</span>
                         <br>
                         <br>
-                        <button class="button" onclick="recommendGames(cus)" id="retry-internet">Click me if you are
+                        <button class="button" onclick="fetchStores()" id="retry-internet">Click me if you are
                             done! 😉</button>
-                    </div>
+                    </center>
                 </div>
             </div>
         </div>
@@ -181,6 +178,9 @@
                 <p>Add Game Code taken from <a
                         href="https://github.com/Bobuxstation/Coal-Launcher/blob/5c9f3a33a5dff4a5b2635e82d5dfe117baaf0ceb/add.html#L44"
                         target="_blank">coal-Launcher</a> and taken with permission.</p>
+                <p>Some instant games are obtained from <a
+                    href="https://emupedia.net/beta/emuos/"
+                    target="_blank">emupedia's EmuOS</a>.</p>
             </div>
         </div>
         <div id="minesweeper" class="tabcontent">
@@ -288,20 +288,15 @@
         <span class="close" id="close-modal-add">&times;</span>
         <br>
         <div id="add-in-form">
-            <label for="name">Game name: </label>
-            <input id="name" type="text" class="text" />
+            <input id="name" type="text" placeholder="Game Name" class="text" />
             <br>
-            <label for="id">Game ID: </label>
-            <input id="id" type="text" class="text" />
+            <input id="id" type="text" placeholder="Game ID" class="text" />
             <br>
-            <label for="icon">Icon: </label>
-            <input id="icon" type="text" class="text" />
+            <input id="icon" type="text" placeholder="Icon" class="text" />
             <br>
-            <label for="exec">Game executable: </label>
-            <input id="exec" type="text" class="text" />
+            <input id="exec" type="text" placeholder="Game executable" class="text" />
             <br>
-            <label for="env">Environment variables: </label>
-            <input id="env" type="text" class="text" />
+            <input id="env" type="text" placeholder="Environment variables" class="text" />
             <br>
             <input type="checkbox" id="is-wine">
             <label for="is-wine"> Is it a Wine game?</label>
