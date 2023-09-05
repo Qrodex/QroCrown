@@ -132,7 +132,6 @@ fetch(app.getPath('userData') + '/config.json')
                 document.getElementById('refresh-store').innerHTML = data.translations.refreshStore
                 document.getElementById('to-library').innerHTML = data.translations.toLibrary
                 document.getElementById('ref-internet').innerHTML = data.translations.refInternet
-                document.getElementById('rec-for-u').innerHTML = data.translations.recForU
                 document.getElementById('internet-discon').innerHTML = data.translations.internetDisconnected
                 document.getElementById('l1').innerHTML = data.translations.discL1
                 document.getElementById('l2').innerHTML = data.translations.discL2
@@ -351,6 +350,7 @@ function getGames() {
         .then(data => {
             let gameList = document.getElementById("game-list-alt");
             gameList.innerHTML = "";
+            document.getElementById("home-list").innerHTML = ""
             if (data.games.length === 0) {
                 gameList.innerHTML = "You do not have any games. Get some games!"
                 document.getElementById("home-list").innerHTML = "You do not have any games. Get some games!"
@@ -359,6 +359,8 @@ function getGames() {
                 document.getElementById("home-list").style.paddingLeft = '10px'
             }
             else {
+                gameList.innerHTML = ""
+                document.getElementById("home-list").innerHTML = ""
                 data.games.forEach(game => {
                     let gameDisplay = document.createElement("div");
                     //if game.icon is empty, use default icon

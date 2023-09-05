@@ -65,6 +65,7 @@
                 <button class="button" onclick="openMenu(event, 'library')" id="to-library">Go to library</button>
                 <button class="button" onclick="openMenu(event, 'store'); fetchStores(); recommendGames(cus);" id="">Go
                     to store</button>
+                <button class="button" onclick="document.getElementById('add-form').style.display = 'block';">Add custom game</button>
                 <button class="button" onclick="recommendGames(cus)" id="ref-internet" style="display: none;">Refresh
                     internet connect</button>
                 <br>
@@ -148,13 +149,14 @@
                         <option value="sw">Kiswalihi</option>
                         <option value="jp">日本語</option>
                     </select>
+                    <br>
                     <p>Styling</p>
                     <select id="cus-css" class="button">
                         <option value="css/default.css">Default Theme</option>
                         <option value="css/light.css">Light Theme</option>
                     </select>
                     <p>Startup style</p>
-                    <select id="cus-startup" class="button">
+                    <select id="cus-startup" class="button" disabled>
                         <option value="default">Default startup</option>
                         <option value="supercell">Supercell</option>
                     </select>
@@ -164,16 +166,16 @@
                         style="background-color: var(--main-color); width: 20%;"
                         value="https://bobuxstation.github.io/Coal-Web/games.json">
                 </div>
-                <h2 id="wine-settings">Wine Settings (Linux only)</h2>
+                <p id="wine-settings">Wine Settings (Linux only)</p>
                 <button class="button" style="margin-top: 10px; margin-bottom: 10px;" id="wine-cfg"
                     onclick="spawnWine('cfg')" id="wine-config">Wine configuration</button>
                 <button class="button" style="margin-top: 10px; margin-bottom: 10px;" id="wine-tricks"
                     onclick="spawnWine('tricks')">Winetricks</button>
-                <h2>Developer options</h2>
-                <button class="button"
+                <h2 hidden>Developer options</h2>
+                <button hidden class="button"
                     onclick="window.open('child.html?url=zeankundev.github.io/forward', 'blank', 'nodeIntegration=true,frame=false,width=933,height=600')">Test
                     open child window</button>
-                <br><br>
+                <br>
                 <h1>Acknowledgements</h1>
                 <p>Add Game Code taken from <a
                         href="https://github.com/Bobuxstation/Coal-Launcher/blob/5c9f3a33a5dff4a5b2635e82d5dfe117baaf0ceb/add.html#L44"
