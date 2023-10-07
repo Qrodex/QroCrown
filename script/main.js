@@ -77,6 +77,9 @@ document.onclick = () => {
     tabSwitch.currentTime = 0;
     tabSwitch.play()
 }
+function tvmode() {
+    window.location.replace('tv.html')
+}
 const changeF = (font) => {
     var h1 = document.querySelectorAll('h1');
     for (var x = 0; x < h1.length; x++) {
