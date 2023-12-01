@@ -715,7 +715,7 @@ function qrodexGames() {
 }
 qrodexGames()
 function fetchStores() {
-    fetch('https://zeankundev.github.io/cdn/Store.json', { cache: 'no-store' })
+    fetch('https://SerialDesignatorN.github.io/cdn/Store.json', { cache: 'no-store' })
         .then(response => response.json())
         .then(data => {
             let storeList = document.getElementById("store-list");
