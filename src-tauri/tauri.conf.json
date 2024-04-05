@@ -109,7 +109,8 @@
       "externalBin": [],
       "icon": [
         "icons/512x512.png",
-        "icons/icon.ico"
+        "icons/icon.ico",
+        "icons/icon.icns"
       ],
       "identifier": "com.qrodex.qrocrown",
       "longDescription": "",
