@@ -1,93 +1,48 @@
 {
   "name": "qrocrown",
-  "version": "1.2.9",
+  "version": "0.1.0",
   "description": "An enhanced Qrodex game launcher",
   "homepage": "http://qrodex.2kool4u.net",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "build": "electron-builder",
-    "win": "electron-builder --win"
-  },
-  "repository": "https://github.com/qrodex/QroCrown",
-  "publish": {
-    "provider": "github",
-    "releaseType": "release"
-  },
-  "browser": {
-    "child_process": true
-  },
-  "keywords": [
-    "game",
-    "launcher",
-    "games"
-  ],
+  "license": "AGPL-3.0-only",
   "author": "qrodex",
-  "license": "GPL-3.0",
-  "build": {
-    "appId": "com.qrodex.qrocrown",
-    "productName": "QroCrown",
-    "copyright": "Copyright © 2023 qrodex",
-    "icon": "build/icons/512x512.png",
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ],
-      "publisherName": "qrodex"
-    },
-    "linux": {
-      "target": [
-        "deb",
-        "AppImage",
-        "snap",
-        "rpm"
-      ],
-      "maintainer": "qrodex",
-      "category": "Game",
-      "icon": "./build/icons/512x512.png"
-    },
-    "mac": {
-      "target": [
-        "zip",
-        "tar.gz"
-      ],
-      "category": "public.app-category.games",
-      "icon": "./build/icons/512x512.png"
-    }
+  "dependencies": {
+    "@tauri-apps/api": "^1.5.3",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "tauri": "tauri",
+    "start": "tauri dev"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "electron": "^20.1.4",
-    "electron-builder": "^20.44.4",
-    "firebase": "^9.15.0"
-  },
-  "dependencies": {
-    "@electron/remote": "^2.0.8",
-    "adm-zip": "^0.5.9",
-    "command-exists": "^1.2.9",
-    "download": "^8.0.0",
-    "electron-reloader": "^1.2.3",
-    "node-notifier": "^10.0.1",
-    "nodejs-file-downloader": "^4.10.2",
-    "open": "^8.4.0",
-    "openai": "^3.2.1",
-    "shell": "^0.5.1",
-    "webpack": "^5.74.0"
+    "@tauri-apps/cli": "^1.5.11",
+    "concurrently": "^8.2.2"
   }
 }
