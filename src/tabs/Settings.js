@@ -44,8 +44,7 @@ function Settings() {
 
     return (
         <div>
-            <h1>Settings</h1>
-            <h3>General settings</h3>
+            <h1>General settings</h1>
             <br />
             <p>Manage library</p>
             <pushbutton onClick={() => openItem('games.json')}>Open games.json file</pushbutton>
@@ -54,10 +53,13 @@ function Settings() {
             <p>Wine Settings (Linux, Mac or FreeBSD only)</p>
             <pushbutton onClick={() => launchWine('cfg')}>Wine configuration</pushbutton>
             <pushbutton onClick={() => launchWine('tricks')}>Winetricks</pushbutton>
-            <h1>About</h1>
-            <h3 style={{ marginBottom: '10px' }}>Client information</h3>
+            <h1>Client information</h1>
+            <br />
             <p>{appName} version: {appVersion}</p>
             <p>Tauri version: {tauriVersion}</p>
+            <br />
+            <h1>About</h1>
+            <br />
             QroCrown is protected under the GNU Affero General Public License version 3 (GNU AGPLv3).
             <br />
             &copy; 2024 Qrodex

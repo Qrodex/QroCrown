@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+function randBetween(min, max) {
+    return (Math.floor(Math.pow(10, 14) * Math.random() * Math.random()) % (max - min + 1)) + min;
+}
+
 function Downloads() {
     const [downloads, setDownloads] = useState(window.downloads);
 
@@ -7,7 +11,7 @@ function Downloads() {
         const updateDownloads = () => {
             setDownloads(window.downloads);
         };
-        
+
         window.addEventListener('downloadsChange', updateDownloads);
 
         return () => {
@@ -23,10 +27,14 @@ function Downloads() {
                 <div key={index}>
                     {index === 0 && <hr />}
                     {index === 0 && <br />}
-                    <h3>{item.name}</h3>
+                    <h3
+                        style={{ paddingLeft: '20px' }}
+                    >{item.name}</h3>
                     <br />
-                    <progress />
-                    <br /><br />
+                    <div class="loading-container">
+                        <div class="loading-bar" style={{ animation: `loadingAnimation ${randBetween(1, 6)}s linear infinite` }} />
+                    </div>
+                    <br />
                     <hr />
                     <br />
                 </div>
