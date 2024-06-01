@@ -6,6 +6,7 @@ import NotifDisplay from './NotifDisplay';
 import errSound from '../assets/button_err.mp3';
 import NoInternetImage from './NoInternetImage';
 import { platform } from '@tauri-apps/api/os';
+import { trackEvent } from "@aptabase/tauri";
 
 window.downloads = []
 
@@ -22,6 +23,7 @@ async function downloadGame(game) {
         const url = game.download
         const file_path = `${await appLocalDataDir()}${game.id}.exe`
 
+        trackEvent("download_from_store", { name: game.name, id: game.id })
         await invoke('download_file', { url: url, filePath: file_path });
 
         var platformName = await platform();

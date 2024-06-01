@@ -17,7 +17,10 @@ import Downloads from './tabs/Downloads';
 import QroCrownLogo from './assets/logo_1024.png';
 import launchSound from './assets/startup.mp3';
 
+import { trackEvent } from "@aptabase/tauri";
+
 window.addEventListener("contextmenu", e => e.preventDefault());
+trackEvent("start_qrocrown")
 
 function App() {
   const tabs = [

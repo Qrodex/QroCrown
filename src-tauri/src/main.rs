@@ -29,20 +29,21 @@ async fn download_file(url: String, file_path: String) -> Result<(), String> {
 
 fn main() {
   tauri::Builder::default()
-    .setup(|app| {
-      let window = app.get_window("main").unwrap();
+      .setup(|app| {
+          let window = app.get_window("main").unwrap();
 
-      #[cfg(target_os = "macos")]
-      apply_vibrancy(&window, NSVisualEffectMaterial::HudWindow, None, None)
-        .expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
+          #[cfg(target_os = "macos")]
+          apply_vibrancy(&window, NSVisualEffectMaterial::HudWindow, None, None)
+              .expect("Unsupported platform! 'apply_vibrancy' is only supported on macOS");
 
-      #[cfg(target_os = "windows")]
-      apply_blur(&window, Some((18, 18, 18, 125)))
-        .expect("Unsupported platform! 'apply_blur' is only supported on Windows");
+          #[cfg(target_os = "windows")]
+          apply_blur(&window, Some((18, 18, 18, 125)))
+              .expect("Unsupported platform! 'apply_blur' is only supported on Windows");
 
-      Ok(())
-    })
-    .invoke_handler(tauri::generate_handler![run_executable, download_file])
-    .run(tauri::generate_context!())
-    .expect("error while running tauri application");
+          Ok(())
+      })
+      .plugin(tauri_plugin_aptabase::Builder::new("A-EU-7898687798").build())
+      .invoke_handler(tauri::generate_handler![run_executable, download_file])
+      .run(tauri::generate_context!())
+      .expect("error while running tauri application");
 }

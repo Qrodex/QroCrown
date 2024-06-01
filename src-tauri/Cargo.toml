@@ -21,6 +21,7 @@ tauri = { version = "1.6.1", features = [ "window-all", "app-all", "http-all", "
 reqwest = "0.11"
 tokio = { version = "1", features = ["full"] }
 window-vibrancy = "0.4.0"
+tauri-plugin-aptabase = "0.4"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.

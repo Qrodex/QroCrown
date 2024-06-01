@@ -5,6 +5,7 @@ import devIcon from '../assets/ic_fluent_people_24_regular.svg';
 import newsIcon from '../assets/ic_fluent_news_24_regular.svg';
 import launchSound from '../assets/button_click.mp3';
 import { WebviewWindow } from '@tauri-apps/api/window'
+import { trackEvent } from "@aptabase/tauri";
 
 function stringGen() {
     var text = "";
@@ -34,6 +35,7 @@ function InstantGameInformationElement({ game }) {
                             className='play'
                             style={{ marginTop: '0px' }}
                             onClick={() => {
+                                trackEvent("open_instant_game", { name: game.name, developer: game.developer })
                                 new WebviewWindow(stringGen(), {
                                     url: game.download || game.preview || game.link,
                                     title: game.name
@@ -53,7 +55,7 @@ function InstantGameInformationElement({ game }) {
                             <img src={newsIcon} alt='developer' style={{ width: '36px' }} />
                             &nbsp;
                             <div style={{ display: 'inline-block' }} onClick={function () {
-                                if (!(game.feed === '' || game.feed === 'false' || game.feed === false)) {
+                                if (!(game.feed === '' || game.feed === 'false' || game.feed === false)) {          
                                     new WebviewWindow(stringGen(), {
                                         url: game.feed,
                                         title: game.name
